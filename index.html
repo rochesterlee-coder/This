@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameCade</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-icon"><span>A+</span></div><div><strong>GAMECADE</strong><small>PLAY • LEARN • LEVEL UP</small></div></div>
+      <div class="side-label">ARCADE</div>
+      <button class="nav-item active" data-page="home"><span>⌂</span> Home</button>
+      <button class="nav-item" data-page="snake"><span>〰</span> Snake Battle <em>AI</em></button>
+      <button class="nav-item" data-page="2048"><span>▦</span> 2048</button>
+      <button class="nav-item" data-page="brick"><span>▤</span> Brick Breaker</button>
+      <button class="nav-item" data-page="grammar"><span>✎</span> Grammar Rush</button>
+      <button class="nav-item" data-page="tetris"><span>🧱</span> Tetris</button>
+      <button class="nav-item" data-page="sudoku"><span>🔢</span> Sudoku</button>
+      <button class="nav-item" data-page="flappy"><span>🐤</span> Flappy Bird</button>
+      <button class="nav-item" data-page="math"><span>➗</span> Math Sprint</button>
+      <div class="side-label settings-label">PREFERENCES</div>
+      <button class="nav-item" data-page="settings"><span>⚙</span> Settings</button>
+      <div class="sidebar-bottom"><div class="level-card"><div class="level-top"><span>YOUR PROGRESS</span><b id="levelText">LEVEL 1</b></div><div class="progress"><i id="xpBar"></i></div><small id="xpText">0 / 100 XP to next level</small></div><div class="profile"><div class="avatar">🎮</div><div><b>Player One</b><small>Arcade explorer</small></div><span class="online-dot"></span></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><div class="eyebrow">WELCOME TO YOUR ARCADE</div><h1 id="pageTitle">Choose your next adventure</h1></div><div class="stats"><div class="stat"><span>⭐</span><div><b id="xpTotal">0</b><small>TOTAL XP</small></div></div><div class="stat"><span>🪙</span><div><b id="coinTotal">0</b><small>COINS</small></div></div></div></header>
+      <section id="homePage" class="page">
+        <div class="hero"><div class="hero-copy"><div class="pill">✦ YOUR NEW FAVORITE ARCADE</div><h2>Big games.<br><span>Smarter brain.</span></h2><p>Battle clever AI snakes, beat your high score, smash bricks, and sharpen your English — all in one place.</p><button class="primary-btn" data-launch="snake">▶ PLAY SNAKE BATTLE</button></div><div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-console"><div class="console-screen"><b>A+</b><small>ARCADE</small></div><div class="console-controls"><i></i><i></i><i></i><i></i></div></div><div class="float-token token-snake">🐍</div><div class="float-token token-2048">2048</div><div class="float-token token-book">📚</div><div class="float-token token-star">✦</div></div></div>
+        <div class="section-heading"><div><h2>Pick your game</h2><p>Arcade action, puzzles, English, maths, and more ways to level up.</p></div><span class="game-count">08 GAMES AVAILABLE</span></div>
+        <div class="game-grid">
+          <article class="game-card snake-card"><div class="card-visual snake-visual"><span class="visual-emoji">🐍</span><span class="mini-pill">AI ARENA</span><div class="dots">• • • • • •</div></div><div class="card-content"><div class="card-meta"><span>ARCADE ACTION</span><span>✦ XP REWARDS</span></div><h3>Snake Battle</h3><p>Eat orbs, grow huge, and outsmart AI snakes. Choose your difficulty.</p><button class="card-btn" data-launch="snake">Play now <span>↗</span></button></div></article>
+          <article class="game-card tile-card"><div class="card-visual tile-visual"><div class="tile-stack"><i>2</i><i>4</i><i>8</i><i>16</i></div></div><div class="card-content"><div class="card-meta"><span>PUZZLE</span><span>✦ XP REWARDS</span></div><h3>2048</h3><p>Merge matching number tiles and chase the legendary 2048 tile.</p><button class="card-btn" data-launch="2048">Play now <span>↗</span></button></div></article>
+          <article class="game-card brick-card"><div class="card-visual brick-visual"><div class="brick-wall"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="brick-ball"></div><div class="paddle"></div></div><div class="card-content"><div class="card-meta"><span>SKILL</span><span>✦ XP REWARDS</span></div><h3>Brick Breaker</h3><p>Keep the ball alive, break every brick, and beat your best score.</p><button class="card-btn" data-launch="brick">Play now <span>↗</span></button></div></article>
+          <article class="game-card grammar-card"><div class="card-visual grammar-visual"><div class="grammar-sheet"><b>ENGLISH</b><span>Choose the correct answer</span><i>A. is / are</i><i>B. do / does</i><i>C. have / has</i></div><div class="grammar-star">✦</div></div><div class="card-content"><div class="card-meta"><span>LEARN & PLAY</span><span>✦ XP REWARDS</span></div><h3>Grammar Rush</h3><p>Practice grammar, tenses, vocabulary, and punctuation with quick quizzes.</p><button class="card-btn" data-launch="grammar">Play now <span>↗</span></button></div></article>
+          <article class="game-card extra-card"><div class="card-visual tetris-visual"><div class="tetris-blocks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-content"><div class="card-meta"><span>ARCADE PUZZLE</span><span>✦ XP REWARDS</span></div><h3>Tetris</h3><p>Rotate falling blocks, clear lines, and keep the board from filling up.</p><button class="card-btn" data-launch="tetris">Play now <span>↗</span></button></div></article>
+          <article class="game-card extra-card"><div class="card-visual sudoku-visual"><div class="sudoku-mini">1 2 3 4 5 6 7 8 9</div></div><div class="card-content"><div class="card-meta"><span>LOGIC</span><span>✦ XP REWARDS</span></div><h3>Sudoku</h3><p>Use logic to complete the number grid without repeating digits.</p><button class="card-btn" data-launch="sudoku">Play now <span>↗</span></button></div></article>
+          <article class="game-card extra-card"><div class="card-visual flappy-visual"><div class="flappy-bird">🐤</div><div class="flappy-pipe"></div></div><div class="card-content"><div class="card-meta"><span>SKILL</span><span>✦ XP REWARDS</span></div><h3>Flappy Flyer</h3><p>Tap or press Space to fly through the gaps and beat your best score.</p><button class="card-btn" data-launch="flappy">Play now <span>↗</span></button></div></article>
+          <article class="game-card extra-card"><div class="card-visual math-visual"><div class="math-symbols">7 × 8 <b>= ?</b></div></div><div class="card-content"><div class="card-meta"><span>MATHS</span><span>✦ XP REWARDS</span></div><h3>Math Sprint</h3><p>Race the clock through quick arithmetic questions and build accuracy.</p><button class="card-btn" data-launch="math">Play now <span>↗</span></button></div></article>
+        </div>
+        <div class="bottom-note"><span>💡</span><div><b>Play smart, earn XP</b><p>Every game helps you earn experience points. Keep playing to level up!</p></div></div>
+      </section>
+      <section id="settingsPage" class="page hidden">
+        <div class="settings-intro"><div class="settings-symbol">⚙</div><div><h2>Settings & Performance</h2><p>Customize your arcade, sound, and performance display.</p></div></div>
+        <div class="settings-grid">
+          <section class="settings-card">
+            <div class="settings-card-title"><span>📊</span><div><h3>Live performance</h3><p>Local performance stats for this app.</p></div><span class="live-badge"><i></i> LIVE</span></div>
+            <div class="telemetry-grid">
+              <div class="telemetry"><small>FPS</small><strong id="fpsValue">--</strong><span>frames per second</span></div>
+              <div class="telemetry"><small>NETWORK PING</small><strong id="pingValue">--</strong><span id="pingLabel">checking connection…</span></div>
+              <div class="telemetry"><small>INTERNET SCORE</small><strong><span id="internetScore">--</span><em>/10</em></strong><span id="internetLabel">checking connection…</span><div class="score-track"><i id="internetScoreBar"></i></div></div>
+            </div>
+            <p class="settings-note">FPS is measured inside the app. Ping and internet score are estimates from a small connection check; they are not game-server latency or a certified speed test.</p>
+            <button class="secondary-btn" id="refreshNetwork">↻ Check connection again</button>
+          </section>
+          <section class="settings-card">
+            <div class="settings-card-title"><span>🎵</span><div><h3>Music & sound</h3><p>Set the arcade atmosphere.</p></div></div>
+            <div class="setting-row"><div><b>Background music</b><small>Original offline arcade melody</small></div><label class="switch"><input type="checkbox" id="musicToggle"><span></span></label></div>
+            <div class="setting-row"><div><b>Sound effects</b><small>UI and game feedback sounds</small></div><label class="switch"><input type="checkbox" id="sfxToggle" checked><span></span></label></div>
+            <div class="volume-row"><label for="musicVolume">Music volume</label><output id="musicVolumeLabel">25%</output></div><input class="range-input" type="range" min="0" max="100" value="25" id="musicVolume">
+            <div class="volume-row"><label for="sfxVolume">Sound effects volume</label><output id="sfxVolumeLabel">35%</output></div><input class="range-input" type="range" min="0" max="100" value="35" id="sfxVolume">
+            <p class="settings-note">Audio starts only after you enable it, because browsers and desktop web views require user interaction before playing sound.</p>
+          </section>
+          <section class="settings-card">
+            <div class="settings-card-title"><span>🖥️</span><div><h3>Display & gameplay</h3><p>Make the arcade feel right for you.</p></div></div>
+            <div class="setting-row"><div><b>Show performance overlay</b><small>FPS and connection status in the top bar</small></div><label class="switch"><input type="checkbox" id="overlayToggle" checked><span></span></label></div>
+            <div class="setting-row"><div><b>Reduce animations</b><small>Use simpler transitions</small></div><label class="switch"><input type="checkbox" id="reduceMotionToggle"><span></span></label></div>
+            <div class="setting-row"><div><b>Game tips</b><small>Show controls and helpful hints</small></div><label class="switch"><input type="checkbox" id="tipsToggle" checked><span></span></label></div>
+            <button class="secondary-btn" id="resetSettings">Reset settings to default</button>
+          </section>
+          <section class="settings-card">
+            <div class="settings-card-title"><span>🌐</span><div><h3>Connection details</h3><p>What these numbers mean.</p></div></div>
+            <div class="connection-row"><span>Connection</span><b id="connectionState">Checking…</b></div>
+            <div class="connection-row"><span>Last check</span><b id="networkCheckedAt">—</b></div>
+            <div class="connection-row"><span>App type</span><b>Windows desktop / Electron</b></div>
+            <div class="connection-row"><span>Multiplayer</span><b>AI opponents (offline-capable)</b></div>
+            <p class="settings-note">Snake Battle's opponents are AI, so ping is informational and does not affect their movement. Connection checks need internet access and can be blocked by firewalls.</p>
+          </section>
+        </div>
+      </section>
+      <section id="gamePage" class="page hidden">
+        <div class="game-toolbar"><button class="back-btn" id="backHome">← Arcade home</button><div class="game-toolbar-right"><span class="game-status" id="gameStatus">READY TO PLAY</span><button class="secondary-btn" id="restartBtn">↻ Restart</button></div></div>
+        <div id="gameIntro" class="game-intro"></div>
+        <div id="gameArea" class="game-area"></div>
+        <div id="gameHelp" class="game-help"></div>
+      </section>
+    </main>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

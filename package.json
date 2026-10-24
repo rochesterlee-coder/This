@@ -1,0 +1,44 @@
+{
+  "name": "gamecade",
+  "version": "1.0.0",
+  "description": "GameCade \u2014 educational mini-game arcade",
+  "main": "main.js",
+  "author": "GameCade",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.gamecade.arcade",
+    "productName": "GameCade",
+    "directories": {
+      "buildResources": "assets"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "styles.css",
+      "renderer.js",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "artifactName": "GameCade-Setup-${version}.${ext}"
+  },
+  "productName": "GameCade"
+}
